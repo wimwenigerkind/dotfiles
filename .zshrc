@@ -36,13 +36,38 @@ prod_command_trap () {
   fi
 }
 
-# Alias Section
-alias wim='vim'
-alias d='docker'
-alias bc='bin/console'
-alias bcdmm='bin/console doctrine:migrations:migrate'
-alias goDev='cd ~/Development/'
-alias goOneDev='cd ~/OneDrive/development/'
-alias goSym='cd ~/SymfonyProjects/'
-alias ll='ls -la'
-alias up='cd ..'
+#### initialize completion system ####
+# see https://unix.stackexchange.com/questions/593433/bash-like-autocompletion-for-ssh-command-in-zsh-shell-with-etc-hosts-file
+# see https://zsh.sourceforge.io/Doc/Release/Completion-System.html
+autoload -Uz compinit; compinit
+
+
+# enable bash style autocomplete (requires compinit to be called before this)
+# see https://stackoverflow.com/questions/3249432/can-a-bash-tab-completion-script-be-used-in-zsh
+# see https://zsh.sourceforge.io/Doc/Release/Completion-System.html
+autoload -Uz bashcompinit; bashcompinit
+
+
+# replace the default ssh autocomplete that comes from compinit
+# with this _complete_ssh_hosts function which looks for hosts in ~/.ssh/config and ~/.ssh/known_hosts
+# Note: requires bashcompinit to enable this bash style autocomplete function
+# see https://stackoverflow.com/questions/52438964/mac-autocomplete-for-ssh-hosts-in-terminal
+# see https://gist.github.com/aliang/1024466
+_complete_ssh_hosts ()
+{
+        COMPREPLY=()
+        cur="${COMP_WORDS[COMP_CWORD]}"
+        comp_ssh_hosts=`cat ~/.ssh/known_hosts | \
+                        cut -f 1 -d ' ' | \
+                        sed -e s/,.*//g | \
+                        grep -v ^# | \
+                        uniq | \
+                        grep -v "\[" ;
+                cat ~/.ssh/config | \
+                        grep "^Host " | \
+                        awk '{print $2}'
+                `
+        COMPREPLY=( $(compgen -W "${comp_ssh_hosts}" -- $cur))
+        return 0
+}
+complete -F _complete_ssh_hosts ssh
