@@ -1,0 +1,6 @@
+[submodule "zshrc-scripts"]
+	path = zshrc-scripts
+	url = git@github.com:wimwenigerkind/zshrc-scripts.git
+[submodule ".zshrc-scripts"]
+	path = .zshrc-scripts
+	url = git@github.com:wimwenigerkind/zshrc-scripts.git
