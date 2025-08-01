@@ -1,0 +1,3 @@
+background = 282c34
+foreground = ffffff
+keybind = shift+enter=text:\n
