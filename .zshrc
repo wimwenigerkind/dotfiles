@@ -1,11 +1,33 @@
-source ~/.zshrc.wim.zsh
 source ~/.secrets.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Load all custom zsh scripts from ~/.zshrc-scripts
+if [[ -d ~/.zshrc-scripts ]]; then
+  for file in ~/.zshrc-scripts/*.{zsh,sh}(N); do
+    if [[ -e "$file" ]]; then
+      source "$file"
+    fi
+  done
+fi
+
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/wim.wenigerkind/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
+# bun completions
+[ -s "/Users/wim.wenigerkind/.bun/_bun" ] && source "/Users/wim.wenigerkind/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/Users/wim.wenigerkind/.bin:$PATH"
+
 eval "$(starship init zsh)"
-
-
 
 # ===================================
 # Laravel Herd configs
