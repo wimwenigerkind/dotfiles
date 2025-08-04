@@ -3,3 +3,5 @@
 keybind = shift+enter=text:\n
 theme = catppuccin-frappe.conf
 shell-integration = zsh
+window-height = 40
+window-width = 130

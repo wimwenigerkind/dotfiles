@@ -27,7 +27,12 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/Users/wim.wenigerkind/.bin:$PATH"
 
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+eval "$(atuin init zsh)"
 eval "$(starship init zsh)"
+#source ~/.oh-my-zsh.zsh
+#eval "$(oh-my-posh init zsh)"
 
 # ===================================
 # Laravel Herd configs
