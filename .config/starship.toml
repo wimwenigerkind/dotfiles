@@ -11,3 +11,9 @@
 # Disable the package module, hiding it from the prompt completely
 # [package]
 # disabled = true
+
+right_format = '$time'
+
+[time]
+disabled = false
+format = '[\[ $time \]]($style) '
