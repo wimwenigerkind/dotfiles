@@ -35,6 +35,8 @@ eval "$(starship init zsh)"
 #eval "$(oh-my-posh init zsh)"
 
 
+neofetch
+
 # ===================================
 # Dynamic
 # ===================================
