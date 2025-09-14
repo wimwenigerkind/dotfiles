@@ -30,6 +30,7 @@ export PATH="/Users/wim.wenigerkind/.bin:$PATH"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 eval "$(atuin init zsh)"
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 #source ~/.oh-my-zsh.zsh
 #eval "$(oh-my-posh init zsh)"
@@ -76,3 +77,4 @@ export NVM_DIR="/Users/wim.wenigerkind/Library/Application Support/Herd/config/n
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
+export PATH="/Users/wim.wenigerkind/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
