@@ -28,14 +28,15 @@ export PATH="/Users/wim.wenigerkind/.bin:$PATH"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
 
+alias claude="~/.claude/local/claude"
+alias cd="z"
+
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 #source ~/.oh-my-zsh.zsh
 #eval "$(oh-my-posh init zsh)"
 
-
-neofetch
 
 # ===================================
 # Dynamic
