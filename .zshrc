@@ -31,6 +31,7 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias claude="~/.claude/local/claude"
 alias cd="z"
 
+eval "$(shopware-cli completion zsh)"
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
