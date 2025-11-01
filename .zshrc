@@ -4,7 +4,7 @@ source ~/.secrets.zsh
 
 # Load all custom zsh scripts from ~/.zshrc-scripts
 if [[ -d ~/.zshrc-scripts ]]; then
-  for file in ~/.zshrc-scripts/*.{zsh,sh}(N); do
+  for file in ~/.zsh/zshrc-scripts/*.{zsh,sh}(N); do
     if [[ -e "$file" ]]; then
       source "$file"
     fi
@@ -17,27 +17,19 @@ autoload -Uz compinit
 compinit
 # End of Docker CLI completions
 
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-
-# bun
-[ -s "/Users/wim.wenigerkind/.bun/_bun" ] && source "/Users/wim.wenigerkind/.bun/_bun"
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH="/Users/wim.wenigerkind/.bin:$PATH"
+source ~/.zsh/export.zsh
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
 
-alias claude="~/.claude/local/claude"
-alias cd="z"
+source ~/.zsh/alias.zsh
 
-eval "$(shopware-cli completion zsh)"
-eval "$(atuin init zsh)"
-eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
+source ~/.zsh/eval.zsh
+
+if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+
 #source ~/.oh-my-zsh.zsh
 #eval "$(oh-my-posh init zsh)"
-
 
 # ===================================
 # Dynamic
