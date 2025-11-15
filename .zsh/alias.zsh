@@ -16,7 +16,7 @@ alias cl='cd && clear'
 alias up='cd ..'
 alias back='cd -'
 alias cdir='cd "${_%/*}"'
-alias ll='nu -c "ls -la"'
+alias ll='nu -c "ls"'
 
 # Project shortcuts
 alias goDev='cd ~/Development/ && sd'
