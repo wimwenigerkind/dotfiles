@@ -3,6 +3,7 @@ alias claude='~/.claude/local/claude'
 alias ip='ipconfig getifaddr en0'
 alias zshrcreload='source ~/.zshrc'
 alias sc='zshrcreload'
+alias dns-purge='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 
 # Editors / Configs
 alias wim='nvim'
