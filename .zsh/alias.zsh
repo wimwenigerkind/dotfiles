@@ -26,6 +26,7 @@ alias goOneDownloads='cd ~/OneDrive/Downloads/ && sAll'
 alias goOneDocs='cd ~/OneDrive/Documents/ && sAll'
 alias goOneDev='cd ~/OneDrive/development/'
 alias goSym='cd ~/SymfonyProjects/'
+alias tf-init='touch {terraform.tf,provider.tf,variable.tf,main.tf}'
 
 # Composer / Symfony / Shopware / PHP
 alias c='composer'
