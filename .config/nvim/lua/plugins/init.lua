@@ -20,8 +20,15 @@ return {
         "phpactor",
         "gopls",
         "json-lsp",
+        "jdtls",
+        "typescript-language-server",
       },
     },
+  },
+
+  {
+    "nvim-java/nvim-java",
+    config = false,
   },
 
   -- test new blink
@@ -36,4 +43,14 @@ return {
   -- 		},
   -- 	},
   -- },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      git = {
+        enable = true,
+        ignore = false,
+      },
+    },
+  },
 }

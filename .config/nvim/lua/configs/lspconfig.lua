@@ -1,6 +1,9 @@
-require("nvchad.configs.lspconfig").defaults()
+vim.lsp.config('*', {
+  capabilities = vim.lsp.protocol.make_client_capabilities(),
+})
 
-local servers = { "html", "cssls", "phpactor", "gopls", "jsonls" }
+local servers = { "html", "cssls", "phpactor", "gopls", "jsonls", "intelephense", "ts_ls" }
 vim.lsp.enable(servers)
 
--- read :h vim.lsp.config for changing options of lsp servers 
+require("java").setup()
+vim.lsp.enable("jdtls")
