@@ -19,6 +19,11 @@ return {
       ensure_installed = {
         "phpactor",
         "gopls",
+        "goimports",
+        "gofumpt",
+        "gomodifytags",
+        "impl",
+        "delve",
         "json-lsp",
         "jdtls",
         "typescript-language-server",
@@ -34,15 +39,22 @@ return {
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "go",
+        "gomod",
+        "gowork",
+        "gosum",
+      },
+    },
+  },
 
   {
     "nvim-tree/nvim-tree.lua",
