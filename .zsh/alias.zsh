@@ -1,5 +1,5 @@
 # General
-alias claude='~/.claude/local/claude'
+# alias claude='~/.local/bin/claude'
 alias ip='ipconfig getifaddr en0'
 alias zshrcreload='source ~/.zshrc'
 alias sc='zshrcreload'
