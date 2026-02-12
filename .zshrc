@@ -2,7 +2,21 @@ source ~/.secrets.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Load all custom zsh scripts from ~/.zshrc-scripts
+# OrbStack (docker/kubectl completions)
+source ~/.orbstack/shell/init.zsh
+
+# Cached compinit
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qN.mh-24) ]]; then
+  compinit -C  # dump is fresh, skip security check
+else
+  compinit     # regenerate dump
+fi
+autoload -Uz bashcompinit && bashcompinit
+
+source ~/.zsh/export.zsh
+
+# Load custom zsh scripts
 if [[ -d ~/.zshrc-scripts ]]; then
   for file in ~/.zsh/zshrc-scripts/*.{zsh,sh}(N); do
     if [[ -e "$file" ]]; then
@@ -11,22 +25,12 @@ if [[ -d ~/.zshrc-scripts ]]; then
   done
 fi
 
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/wim.wenigerkind/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
-
-source ~/.zsh/export.zsh
-
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-[[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
+# Hardcoded path avoids slow $(brew --prefix) subshell
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source ~/.zsh/alias.zsh
 
 source ~/.zsh/eval.zsh
-
-if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 
 #source ~/.oh-my-zsh.zsh
 #eval "$(oh-my-posh init zsh)"
@@ -62,5 +66,7 @@ export HERD_PHP_85_INI_SCAN_DIR="/Users/wim.wenigerkind/Library/Application Supp
 # Herd injected NVM configuration
 export NVM_DIR="/Users/wim.wenigerkind/Library/Application Support/Herd/config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
 
 export PATH="/Users/wim.wenigerkind/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
