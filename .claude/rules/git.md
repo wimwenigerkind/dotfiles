@@ -1,0 +1,4 @@
+- Write commit messages in English, even if the conversation is in German
+- Conventional Commits: feat, fix, chore, refactor, docs, test, with scope in parentheses
+- No commit body; the subject line carries the full change, unless I explicitly ask for one
+- Don't add "Co-authored-by" or generated-with footers
