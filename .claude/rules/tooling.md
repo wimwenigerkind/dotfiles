@@ -1,0 +1,5 @@
+- Use bun and bunx, never npm, npx or yarn: `bun add`, `bun run`, `bunx --yes <tool>`
+- Run what the project already defines rather than inventing a command: a Taskfile target, a script in package.json, a Makefile rule
+- Verify APIs against current documentation before using them; check the installed version of a dependency instead of trusting memory
+- Commit the files a command changed on their own, with the command as the message (`$ bun add diff`)
+- Don't add a dependency for something the standard library does in a few lines, and say what the dependency buys when you do add one

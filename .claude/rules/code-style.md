@@ -1,0 +1,6 @@
+- Match the style, naming and idiom of the surrounding code; the new lines should be hard to tell from the old ones
+- Comment the non-obvious: a decision, a constraint, a trade-off, a workaround for somebody else's behaviour
+- Never restate in a comment what the code already says, and don't write a comment per function because every function has one
+- Prefer one value over several derived ones: one address instead of host and port, one url instead of scheme, host and path
+- Expose configuration only for what genuinely differs between environments; everything else stays a constant in the code
+- Keep a type or a table responsible for one thing: a row that is edited and a record that is written once are two things

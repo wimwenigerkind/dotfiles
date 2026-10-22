@@ -1,0 +1,4 @@
+- Write code, comments, identifiers, documentation and Markdown in English, even when the conversation is in German
+- Reply to me in German
+- Never use em dashes or en dashes, not in code, not in docs, not in chat; use a colon, a comma, parentheses or a second sentence
+- Keep product copy in one language per surface: don't mix German labels into an English interface

@@ -1,0 +1,6 @@
+- Work in small, reviewable steps; present a step and wait before moving on to the next one
+- Don't bundle unrelated changes into one step or one commit
+- Never commit or push on your own; ask first, every time
+- Before saying something works, run the project's own checks: build, vet, lint, type check, and the tests if there are any
+- Report what actually happened: if a check failed, show the output; if a step was skipped, say so
+- Say which part of a change you could not verify instead of implying you saw it work
